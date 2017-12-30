@@ -1,11 +1,10 @@
 $(document).ready(function(){
     
     $("#all").css("color", "#00b3cc");
-    $("#game").css("color", "black");
-    $("#music").css("color", "black");
-    $("#all").css("font-size", "175%");
-    $("#game").css("font-size", "150%");
-    $("#music").css("font-size", "150%");
+
+    $("#all").css("font-size", "225%");
+    $("#game").css("font-size", "200%");
+    $("#music").css("font-size", "200%");
 
     $("#all").click(function() {
         $(".game-item").fadeIn();
@@ -15,9 +14,9 @@ $(document).ready(function(){
         $("#game").css("color", "black");
         $("#music").css("color", "black");
 
-        $("#all").css("font-size", "175%");
-        $("#game").css("font-size", "150%");
-        $("#music").css("font-size", "150%");
+        $("#all").css("font-size", "225%");
+        $("#game").css("font-size", "200%");
+        $("#music").css("font-size", "200%");
     });
 
     $("#game").click(function() {
@@ -28,9 +27,9 @@ $(document).ready(function(){
         $("#game").css("color", "#00b3cc");
         $("#music").css("color", "black");
 
-        $("#all").css("font-size", "150%");
-        $("#game").css("font-size", "175%");
-        $("#music").css("font-size", "150%");
+        $("#all").css("font-size", "200%");
+        $("#game").css("font-size", "225%");
+        $("#music").css("font-size", "200%");
     });
 
     $("#music").click(function() {
@@ -41,8 +40,8 @@ $(document).ready(function(){
         $("#game").css("color", "black");
         $("#music").css("color", "#00b3cc");
 
-        $("#all").css("font-size", "150%");
-        $("#game").css("font-size", "150%");
-        $("#music").css("font-size", "175%");
+        $("#all").css("font-size", "200%");
+        $("#game").css("font-size", "200%");
+        $("#music").css("font-size", "225%");
     });
 });
