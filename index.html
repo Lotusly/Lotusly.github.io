@@ -15,6 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
         <!-- Icons -->
         <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
         <!-- Navigation -->
@@ -55,72 +59,89 @@
 
             <header>
                 <div class="row" id="portfolio">
+                    <!--
                     <h2 class="col-lg-12 text-center">
                     Portfolio
                     <hr class="star-light">
                     </h2>
+                -->
+                    <div class="col-lg-12 text-center">
+                        <span class="classifier" id="all">All</span>
+                        <span class="seperator"> | </span>
+                        <span class="classifier" id="game">Game</span>
+                        <span class="seperator"> | </span>
+                        <span class="classifier" id="music">Music</span>
+                        <hr class="star-light">
+                    </div>
+                    
                 </div>
             </header>
-
-
 
             <div class="row">
 
                 <!-- each div is one project -->
-                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                    <a href="project.html">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="resources/images/1.jpg" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project One
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 game-item portfolio-item-wrapper">
+                    <div class="portfolio-item">
+                        <a href="project.html">
+                            <div class="h-100">
+                                <img class="card-img-top" src="resources/images/1.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project One
+                                    </h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                    <a href="project.html">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="resources/images/6.jpg" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project Two
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 game-item portfolio-item-wrapper">
+                    <div class="portfolio-item">
+                        <a href="project.html">
+                            <div class="h-100">
+                                <img class="card-img-top" src="resources/images/6.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project Two
+                                    </h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                    <a href="project.html">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="resources/images/3.jpg" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project Three
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 game-item portfolio-item-wrapper">
+                    <div class="portfolio-item">
+                        <a href="project.html">
+                            <div class="h-100">
+                                <img class="card-img-top" src="resources/images/3.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <i class="fa fa-gamepad" aria-hidden="true"></i> Game Project Three
+                                    </h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                    <a href="project.html">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="resources/images/4.jpg" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                <i class="fa fa-music" aria-hidden="true"></i> Music One
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 music-item portfolio-item-wrapper">
+                    <div class="portfolio-item">
+                        <a href="project.html">
+                            <div class="h-100">
+                                <img class="card-img-top" src="resources/images/4.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <i class="fa fa-music" aria-hidden="true"></i> Music One
+                                    </h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
             
