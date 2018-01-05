@@ -1,46 +1,50 @@
 $(document).ready(function(){
     
-    $("#all").css("color", "#00b3cc");
+    $("#featured").css("color", "#00b3cc");
 
-    $("#all").css("font-size", "225%");
+    $("#featured").css("font-size", "225%");
     $("#game").css("font-size", "200%");
     $("#music").css("font-size", "200%");
 
-    $("#all").click(function() {
-        $(".game-item").fadeIn();
-        $(".music-item").fadeIn();
+    $("#featured").click(function() {
+        $(".game-item").hide();
+        $(".music-item").hide();
+        $(".featured-item").fadeIn();
 
-        $("#all").css("color", "#00b3cc");
+        $("#featured").css("color", "#00b3cc");
         $("#game").css("color", "black");
         $("#music").css("color", "black");
 
-        $("#all").css("font-size", "225%");
+        $("#featured").css("font-size", "225%");
         $("#game").css("font-size", "200%");
         $("#music").css("font-size", "200%");
     });
 
     $("#game").click(function() {
-        $(".game-item").fadeIn();
+        $(".featured-item").hide();
         $(".music-item").hide();
+        $(".game-item").fadeIn();
 
-        $("#all").css("color", "black");
+
+        $("#featured").css("color", "black");
         $("#game").css("color", "#00b3cc");
         $("#music").css("color", "black");
 
-        $("#all").css("font-size", "200%");
+        $("#featured").css("font-size", "200%");
         $("#game").css("font-size", "225%");
         $("#music").css("font-size", "200%");
     });
 
     $("#music").click(function() {
+        $(".featured-item").hide();
         $(".game-item").hide();
         $(".music-item").fadeIn();
 
-        $("#all").css("color", "black");
+        $("#featured").css("color", "black");
         $("#game").css("color", "black");
         $("#music").css("color", "#00b3cc");
 
-        $("#all").css("font-size", "200%");
+        $("#featured").css("font-size", "200%");
         $("#game").css("font-size", "200%");
         $("#music").css("font-size", "225%");
     });
