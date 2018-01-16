@@ -6,6 +6,10 @@ $(document).ready(function(){
     $("#game").css("font-size", "200%");
     $("#music").css("font-size", "200%");
 
+    $(".game-item").hide();
+    $(".music-item").hide();
+    $(".featured-item").fadeIn();
+
     $("#featured").click(function() {
         $(".game-item").hide();
         $(".music-item").hide();
