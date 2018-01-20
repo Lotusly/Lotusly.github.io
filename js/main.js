@@ -1,55 +1,46 @@
 $(document).ready(function(){
     
-    $("#featured").css("color", "#00b3cc");
-
-    $("#featured").css("font-size", "225%");
-    $("#game").css("font-size", "200%");
-    $("#music").css("font-size", "200%");
-
-    $(".game-item").hide();
-    $(".music-item").hide();
+    select($("#featured"));
     $(".featured-item").fadeIn();
 
     $("#featured").click(function() {
-        $(".game-item").hide();
-        $(".music-item").hide();
+        select($("#featured"));
         $(".featured-item").fadeIn();
-
-        $("#featured").css("color", "#00b3cc");
-        $("#game").css("color", "black");
-        $("#music").css("color", "black");
-
-        $("#featured").css("font-size", "225%");
-        $("#game").css("font-size", "200%");
-        $("#music").css("font-size", "200%");
     });
 
     $("#game").click(function() {
-        $(".featured-item").hide();
-        $(".music-item").hide();
+        select($("#game"));
         $(".game-item").fadeIn();
+    });
 
-
-        $("#featured").css("color", "black");
-        $("#game").css("color", "#00b3cc");
-        $("#music").css("color", "black");
-
-        $("#featured").css("font-size", "200%");
-        $("#game").css("font-size", "225%");
-        $("#music").css("font-size", "200%");
+    $("#video").click(function() {
+        select($("#video"));
+        $(".video-item").fadeIn();
     });
 
     $("#music").click(function() {
-        $(".featured-item").hide();
-        $(".game-item").hide();
+        select($("#music"));
         $(".music-item").fadeIn();
-
-        $("#featured").css("color", "black");
-        $("#game").css("color", "black");
-        $("#music").css("color", "#00b3cc");
-
-        $("#featured").css("font-size", "200%");
-        $("#game").css("font-size", "200%");
-        $("#music").css("font-size", "225%");
     });
 });
+
+var select = function(e) {
+    resetAll();
+    
+    $(e).css("font-size", "225%");
+    $(e).css("color", "#00b3cc");
+
+    $(".portfolio-item-wrapper").hide();
+}
+
+var reset = function(e) {
+    $(e).css("font-size", "200%");
+    $(e).css("color", "black");
+}
+
+var resetAll = function() {
+    reset($("#featured"));
+    reset($("#game"));
+    reset($("#video"));
+    reset($("#music"));
+}
