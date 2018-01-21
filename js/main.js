@@ -1,47 +1,46 @@
 $(document).ready(function(){
     
-    $("#all").css("color", "#00b3cc");
+    select($("#featured"));
+    $(".featured-item").fadeIn();
 
-    $("#all").css("font-size", "225%");
-    $("#game").css("font-size", "200%");
-    $("#music").css("font-size", "200%");
-
-    $("#all").click(function() {
-        $(".game-item").fadeIn();
-        $(".music-item").fadeIn();
-
-        $("#all").css("color", "#00b3cc");
-        $("#game").css("color", "black");
-        $("#music").css("color", "black");
-
-        $("#all").css("font-size", "225%");
-        $("#game").css("font-size", "200%");
-        $("#music").css("font-size", "200%");
+    $("#featured").click(function() {
+        select($("#featured"));
+        $(".featured-item").fadeIn();
     });
 
     $("#game").click(function() {
+        select($("#game"));
         $(".game-item").fadeIn();
-        $(".music-item").hide();
+    });
 
-        $("#all").css("color", "black");
-        $("#game").css("color", "#00b3cc");
-        $("#music").css("color", "black");
-
-        $("#all").css("font-size", "200%");
-        $("#game").css("font-size", "225%");
-        $("#music").css("font-size", "200%");
+    $("#video").click(function() {
+        select($("#video"));
+        $(".video-item").fadeIn();
     });
 
     $("#music").click(function() {
-        $(".game-item").hide();
+        select($("#music"));
         $(".music-item").fadeIn();
-
-        $("#all").css("color", "black");
-        $("#game").css("color", "black");
-        $("#music").css("color", "#00b3cc");
-
-        $("#all").css("font-size", "200%");
-        $("#game").css("font-size", "200%");
-        $("#music").css("font-size", "225%");
     });
 });
+
+var select = function(e) {
+    resetAll();
+    
+    $(e).css("font-size", "225%");
+    $(e).css("color", "#00b3cc");
+
+    $(".portfolio-item-wrapper").hide();
+}
+
+var reset = function(e) {
+    $(e).css("font-size", "200%");
+    $(e).css("color", "black");
+}
+
+var resetAll = function() {
+    reset($("#featured"));
+    reset($("#game"));
+    reset($("#video"));
+    reset($("#music"));
+}
