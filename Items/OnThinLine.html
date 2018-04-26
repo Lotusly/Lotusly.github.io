@@ -46,12 +46,12 @@
                         </ul>
                         <hr class="star-light">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/0ppynzpRjSE" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/t2EWUggCfVY" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <hr class="star-light">
                         
                         <p>
-                            On Thin Line is a music adventure game. It is developed for the game jam 41th Ludum DareNow with the theme "Combine 2 Incompatible Genres". Version 1.0 has been published. Down below there is what I have now and how I made them.
+                            On Thin Line is a music adventure game. It is developed for the game jam 41th Ludum DareNow with the theme "Combine 2 Incompatible Genres". Version 2.0 has been published. Down below there is what I have now and how I made them.
                         <p>
 						<font size=6 color="orange">Version Features</font>
 						<ul>
@@ -60,13 +60,13 @@
 							<li>Complete story, some AI behaviors and a "good" end CG. </li>
 							<li>Music that is well combined with gameplay and story. </li>
 							<li>Somehow balanced system. "Good" ending can only be reached by good playing in some levels.</li>
+							<li>Main Menu and function to go back to menu from game.</li>
 						</ul>
 						<br>
 						<font size=6 color="orange">What This Version Doesn't Have (but later versions will have)</font>
 						<ul>
-							<li>Main Menu that players can choose to start the game at any time.</li>
+							
 							<li>Feedback on the white ball when the player hit Button A.
-							<li>Function to go back to Main Menu from the game.</li>
 							<li>Support mouse and keyboard control.</li>
 							<li>More actions to the blue ball.</li>
 							<li>Better effects when player hit or miss nodes.</li>
@@ -206,7 +206,15 @@
 							About the actual storytelling strategy, I think detail is the only way to make it work. If we just tell the player "Jack is nervous", audience feel nothing. Only by the tiny sweats, pale lips, neurotically rolling eyeballs and shivering muscles, audience know it. In contrast, if we only put such a Jack in the scene, we don't even need to explain. Sometimes we can see scripts try everything to explain the situation, while audience still doubt it because details are not convincing. (And good scripts make audience say "absolutely". Best scripts stop audience from discussion, because it is so unpredictable and profound as our real life.) In On Thin Line, the chasing between blue and yellow spheres is obviously a showing of their personalities. But an important detail that assists it is, the white ball only need to stay on the line. All nodes are just on the line. So the player can watch the two other balls to chase, it is such a peaceful and happy atmosphere. Because of the relationships between the player and the main character, when the player stop controlling, he feels the main character is taking a rest, watching the scenery or he is strong enough to enjoy his life. When the player looks at the two balls, he feels the main character is looking at two personalized partners, and therefore the player establishes the relationships between the main character and supportive characters. If you ever played through my game, you can think back in your memory. When the blue ball and yellow ball just appear, how much do you see them as partners? After watching them for a while, how much then? Without words, players will know the two balls are important friends of the main character. It is how I tell the story.
 
                         </p>
-        
+                        <font size=5 color = "orange">Menu</font>
+                        <p>
+                        	The implementation of main menu is tricky. I want to make the white ball move in the main menu to create a cool continuous feeling. But I don't want to cause any leaking. If simply move the white ball in a certain direction, it will finally went extremely far away if the player stay in main menu for too long. While if it stays unmoved, the beautiful trail coudln't be rendered. So I put things on a circle.
+                        </p>
+
+        				<img src="..\resources\images\Contain\OnThinLine_MenuTrick.gif" >
+        				<p>
+        					When the player starts the game, the position data of the sphere's trail is transfered into the new coordinates, so it looks like the sphere doesn't move. But actuallly it is quickly moved from the "menu thin line" to the "game thin line".
+        				</p>
                         
                         
                     </article>
