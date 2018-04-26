@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>[Game] On Thin Line</title>
+        <!-- Bootstrap core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="../css/main.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
+        <!-- Icons -->
+        <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Lotus Li</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"> <i class="fa fa-bars"></i></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <article>
+                        <h2>On Thin Line</h2>
+                        <hr class="star-primary">
+                        <ul>
+                            <li>Platform: Windows PC with a Xbox Controller</li>
+                            <li>Time: 3 Minutes</li>
+                            <li>Team size: 1 (Independent)</li>
+                            <li>Project Session Time: 3 Days</li>
+                            <li>Event: 41st Ludum Dare Jam</li>
+                            <li>Source Code: <a href="https://github.com/Lotusly/OnThinLine" target="=blank"><i class="fa fa-download" aria-hidden="true"></i>Github</a></li>
+                            <li>Executable: <a href="https://lotusli.itch.io/on-thin-line" target="=blank"><i class="fa fa-download" aria-hidden="true"></i>Itch</a></li>
+                        </ul>
+                        <hr class="star-light">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/0ppynzpRjSE" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <hr class="star-light">
+                        
+                        <p>
+                            On Thin Line is a music adventure game. It is developed for the game jam 41th Ludum DareNow with the theme "Combine 2 Incompatible Genres". Version 1.0 has been published. Down below there is what I have now and how I made them.
+                        <p>
+						<font size=6 color="orange">Version Features</font>
+						<ul>
+							<li>Use XBox controller to play. Left stick Y axis to move, Button A to hit.</li>
+							<li>Level and upgrading system. 75% accuracy is in need to pass each level (except for final boss level). Boss combat level.</li>
+							<li>Complete story, some AI behaviors and a "good" end CG. </li>
+							<li>Music that is well combined with gameplay and story. </li>
+							<li>Somehow balanced system. "Good" ending can only be reached by good playing in some levels.</li>
+						</ul>
+						<br>
+						<font size=6 color="orange">What This Version Doesn't Have (but later versions will have)</font>
+						<ul>
+							<li>Main Menu that players can choose to start the game at any time.</li>
+							<li>Feedback on the white ball when the player hit Button A.
+							<li>Function to go back to Main Menu from the game.</li>
+							<li>Support mouse and keyboard control.</li>
+							<li>More actions to the blue ball.</li>
+							<li>Better effects when player hit or miss nodes.</li>
+							<li>Neater codes and project files.</li>
+							<li>Credits.</li>
+						</ul>
+						<br>
+						<font size=6 color="orange">What May Be Added Later if I Have Time</font>
+						<ul>
+							<li>Freely circling path line</li>
+							<li>More music in.</li>
+							<li>A tool (Unity Plugin) to build story for music in this way.</li>
+						</ul>
+						<br>
+						<font size=6 color="orange">How I Achieved It</font><br>
+						<p>
+							It was a very dynamic development. The design changed all the time. I am happy to see every change always lead to a better design or better efficiency in this process. (But it also makes me a little sad to think of that,  there's no way people could achieve such highly dynamic efficient development in teamwork.)
+						</p>
+
+						<font size=5 color="orange">Original Idea</font><br>
+						<p>
+							When I saw the theme "Combine 2 incompatible genres", my brain was a total blank. I just normally went to bed that night. In the morning, I still didn't have any attractive enough ideas, but I knew I was running out of time. So I just chose one that felt best, and decided to insist on it no matter how.<br>
+							So the very original idea was this music runner adventure. A bunch of imaginations were:
+						</p> 
+						<ul>
+							<li>Black background and pure-color sphere characters that has long graceful tails.
+							<li>Spheres move in one direction along a thin line. </li>
+							<li>Use controller axis to control wave movement and touch nodes to make sounds for the music. Beautiful curves are desired.</li>
+							<li>While the music grows rich with time, supportive characters representing new instruments one-by-one join the journey as different-colored spheres that follow the main character. The desired amount of supportive characters is 4. 2 floating above the main character and 2 below.</li>
+							<li>Before the main character gets the new supportive characters, he needs to go through a "level" to collect colorful nodes of the new instruments. If he fails to collect enough nodes, he will not call out the supportive character or directly fail the game.
+							Supportive characters play their instruments automatically. So the player don't need to play too many nodes.</li>
+						</ul>
+						<font size=5 color="orange">Music and Sounds</font>
+						<p>
+							At first is was for testing. I put my music "Fall" in the half-way game to see whether functions worked as I thought. Then quickly I realized that I had no time to compose a totally new piece... So I gradually accepted "Fall" as my main music. <br> 
+
+							At first I wanted to use piano sounds for the main character. But I cannot get good piano samples. I had two methods to get these samples, one is from Sibelius, one is from Logic Pro X. But the very sad situation is, I don't know how to edit or mix sounds. So I can't make the original samples beautiful. So finally I had to choose a sound that was not colorful itself: glass piano. (If anybody  checks the Resources folder in the project, you will find piano samples there. They were sampled from Logic Pro X without any after effects. They sounds terrible. You won't regret missing them. )
+						</p>
+
+						<font size=5 color="orange">Player Control</font>
+						<p>
+							I went through a rather tough and long time building player control. If anybody checks my source code, you will see many tries there.
+						</p>
+						<big>
+						<dl>
+							<dt>Control position directly</dt>
+								<dd> Too discrete and ugly curve. Although control is instant.</dd>
+							<dt>Control acceleration</dt> 
+								<dd>Although curve is smooth, it has too much inertia. A good function between acceleration and distance is in need to make this work. But I don't have time to explore it. </dd>
+							<dt>Control speed</dt>
+								<dd>This is what I finally took. Actually I am not very satisfied with it, but it is a good balance between smooth curve and instant control.</dd>
+						</dl>
+						</big>
+						<font size=5 color="orange">Level Design: Gameplay</font>
+						<p>
+							A key point of level design is to gradually enrich the gameplay. I focused on gameplay design from the very beginning of the project. For now, On Thin Line only has two gameplays: One is using one Axis of Stick to move in one dimension (up and down) to touch nodes (and almost all nodes are either up at the top, either down to the bottom, or in the very middle), and the other is to press Button A to hit drum. Why the gameplay went so simple and plain finally? Because I found:
+						</p>
+						<big>
+						<dl>
+							<dt>Delicate control</dt>
+								<dd>The controller stick is not as free as a mouse. Players can hardly make the axis stays at values other than 1,0 and -1. (For example, hard to stay at  0.5 or 0.3.) It makes delicately placed nodes impossible. (Actually, this fact is what I didn't think of in the first version of design. I used to plan delicate levels. But the controller feels nothing like my imagination.)</dd>
+							<dt>Buttons</dt>
+								<dd>It is either not a good idea to use two buttons or more. First, it is not easy for players to distinguish and move their right thumb among multiple buttons in a fast-tempo game. Secondly, it is not new or interesting after players have experienced Drum. Finally, it does not make sense. When I import Button A for Drum instrument, it is so natural and intuitive. But if I import another button for another instrument or action... it is just redundant, because the control "Hitting Button" has been assigned to Drum and bounded with the concept "HITTING DRUM" in players' mind.</dd>
+							<dt>Horizontal movement</dt>
+								<dd>It is not a good idea to give players the control of horizontal movement. It players do so, I cannot guarantee they hit nodes at the perfect time, then the music will sounds terrible.</dd>
+							<dt>Another stick<dt>
+								<dd>It is an OK idea to use another stick (the right stick) to control supportive characters (or other things) to move (maybe around the main character). But I couldn't give this behavior any meaning. And either I couldn't make it feels normal for the player to control something other than the main character. You know, the player builds emotional relationships between himself and the main character. (in RPG games this phenomenon is very obvious, but in many other games it also has strong effects. Especially On Thin Line has some RPG elements somehow.) If I enable the player to control other characters or things, it will break these emotional relationships.</dd>
+						</dl>
+						</big>
+						<p>
+							It looks like I run out of options. But actually I have a clutch shot: to extend this game from 2D into 3D, then the player can control in 2 dimensions (use both axes of the controller stick to circling around the thin line).  I held this idea even from the very beginning. It has 4 advantages:
+						</p>
+						<ol>
+							<li>Rolling the stick is purely addictive action!</li>
+							<li>I can design interesting levels with the enriched player control. </li>
+							<li>I can transfer 2D to 3D at some point in the game as a part of the progression. It will be amazing. </li>
+							<li>The tail circling around the thin line is just so beautiful.</li>
+						</ol>
+						<p>
+							However, I found that players have no way to distinguish the distance in such a 3D space. The background is pure black. No references could tell the player which point of this space is the sphere (or nodes) staying at. It is just impossible to control the sphere to hit the nodes. <br>
+						
+
+							I did wrote all the functions in need for 3D. If anybody checks my codes and project files... the 2-dimensional control codes are in the playercontrol script and several disabled cameras are in the scene. They were for the 3D display. You can even find a script called "camerafly" that can transfer my 2D camera to a 3D one. The effect is just as below. It is beautiful, but could anybody distinguish the position of anything?
+						</p>
+
+						<img src="..\resources\images\Contain\OnThinLine_3DView.png" alt="3D View">
+						<font size=5 color="orange">Level Design: Narrative</font>
+						<p>
+							"Fall" is not an ideal music to build narrative progressions. It's original structure is:
+						</p>
+						<big>
+						<table>
+						<tr>
+							<th>Segments (16 beats per unit)</th>
+							<th>Instruments</th>
+						</tr>
+						<tr>
+							<th>1 ~ 4</th>
+							<th>Piano</th>
+						</tr>
+						<tr>
+							<th>5 ~ 6</th>
+							<th> P, Drum</th>
+						</tr>
+						<tr>
+							<th>7 ~ 10</th>
+							<th>P, D, Guitar</th>
+						</tr>
+						<tr>
+							<th>11 ~ 12</th>
+							<th>P, D, G, Piccolo</th>
+						</tr>
+						<tr>
+							<th>13</th>
+							<th>P</th>
+						</tr>
+						<tr>
+							<th>14</th>
+							<th>P, D, G, Pi</th>
+						</tr>
+						<tr>
+							<th>15 ~ 18</th>
+							<th>P</th>
+						</tr>
+						
+						
+						
+						</table>
+						</big>
+						<p>
+							A proper length to "tame" a new instrument into supportive characters is 2*16 beats. It means after the player tames Drum, he needs to immediately tame Guitar. But after taming guitar, we got a rest before taming Piccolo. But why is it? And, segment 11~14 is very rich of varieties. It changes so quickly that there's no enough time to explain what happened to the player.<br>
+
+							At first, the design is just simple collecting partners. But while I was putting in Drum and Guitar levels, I realized what was hidden below these levels is the power of "progression", is the theme about "growth", as everybody experiences in their own life and so that everybody would understand.  When players love fine progression, actually they are thinking of their own "growth" potentially. It is something about that, All Arts Have the Same Nature. The literary story that the music tells is actually how a hero of an adventure game starts his journey to his faith, gets experience in small battles, upgrades, gains partners with his faith and efforts, has a period of happy time, and fights against evil power. He tastes failure, then he devotes all of him. He may either win or lose. But anyway, after the summit of his life, he steps on the way back to home, to what is precious to him. So his faith pays back. Maybe not as much as he devoted, but it is a good ending for him.<br>
+
+							Up to now, the game does have a soul inside. We will like playing Pinball or Teris, but after playing them, we can hardly say we get  more aware of ourselves or get stronger in real world. If I didn't make a story for On Thin Line or just made a story terrible, it would become a game like Pinball or Teris. May be a Pinball with fine music. But after I tell such a realistic story, the game has the power to influence people with his personalized soul. Like we would admire a charming person, like we love fine progression with our own understanding of "growth", we also change our real life with our understanding of virtual games. It is how human comes.<br>
+
+							About the actual storytelling strategy, I think detail is the only way to make it work. If we just tell the player "Jack is nervous", audience feel nothing. Only by the tiny sweats, pale lips, neurotically rolling eyeballs and shivering muscles, audience know it. In contrast, if we only put such a Jack in the scene, we don't even need to explain. Sometimes we can see scripts try everything to explain the situation, while audience still doubt it because details are not convincing. (And good scripts make audience say "absolutely". Best scripts stop audience from discussion, because it is so unpredictable and profound as our real life.) In On Thin Line, the chasing between blue and yellow spheres is obviously a showing of their personalities. But an important detail that assists it is, the white ball only need to stay on the line. All nodes are just on the line. So the player can watch the two other balls to chase, it is such a peaceful and happy atmosphere. Because of the relationships between the player and the main character, when the player stop controlling, he feels the main character is taking a rest, watching the scenery or he is strong enough to enjoy his life. When the player looks at the two balls, he feels the main character is looking at two personalized partners, and therefore the player establishes the relationships between the main character and supportive characters. If you ever played through my game, you can think back in your memory. When the blue ball and yellow ball just appear, how much do you see them as partners? After watching them for a while, how much then? Without words, players will know the two balls are important friends of the main character. It is how I tell the story.
+
+                        </p>
+        
+                        
+                        
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="py-5">
+            <div class="container">
+                <p class="col-lg-12 text-center">Copyright <span style="font-family:'Cinzel'">&copy;</span> Yu Li 2017</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+        <!-- Bootstrap core JavaScript -->
+        <script src="../vendor/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.js"></script>
+    </body>
+</html>
