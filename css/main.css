@@ -177,24 +177,23 @@ article h2 {
 }
 
 article h3 {
-    font-family: "Hind", sans-serif;
     font-size: 200%;
     font-weight: 500;
     text-align: left;
     padding-bottom: 0;
-    margin-bottom: 0;
-    margin-top: 2em;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    color: orange;
 }
 
-
 article h4 {
-    font-family: "Hind", sans-serif;
     font-size: 150%;
-    font-weight: 400;
     text-align: left;
     padding-bottom: 0;
-    margin-bottom: 0;
-    margin-top: 2em;
+    margin-bottom: 0.2em;
+    margin-top: 1.5em;
+    color: orange;
+    font-style: italic;
 }
 
 article p {
@@ -202,7 +201,7 @@ article p {
     line-height: 1.6em;
     font-family: "Kelly Slab", serif;
     text-align: left;
-    margin: 1.25em 0;
+    margin: 1em 0;
 }
 
 article .notes {
