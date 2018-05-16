@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     select($("#featured"));
     $(".featured-item").fadeIn();
 
