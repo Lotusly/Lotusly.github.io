@@ -1,0 +1,55 @@
+
+
+.image_column_2 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.image_column_3 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Clearfix (clear floats) */
+.image_row::after {
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
+}
+
+.image_row img {
+	width: 100%;
+}
+
+.centered {
+	text-align: center;
+}
+
+.bg_red {
+	background-color: #f4cccc;
+}
+
+.bg_green {
+	background-color: #d9ead3;
+}
+
+table {
+	width: 100%;
+	font-size: 1.1em;
+}
+table tr {
+	width: 100%;
+}
+table tr th, table tr td {
+	width: 50%;
+	padding: 5px;
+}
+
+table, th, td {
+  border: 0.5px solid #afafaf;
+}
