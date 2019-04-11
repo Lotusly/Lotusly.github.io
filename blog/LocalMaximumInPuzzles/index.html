@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Local Maximum in Puzzles</title>
+		<title>Local Maximum Points in Puzzles</title>
 		<!-- Bootstrap core CSS -->
 		<link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -57,28 +57,23 @@
 				<div class="col-lg-2"></div>
 				<div class="col-lg-8">
 					<article>
-						<h2>Local Maximum in Puzzles</h2>
+						<h2>Local Maximum Points in Puzzles</h2>
 						<hr class="star-primary">
 
 						<p>
-							Game is about problem-solving. Problem-solving forms puzzles. I noticed that some puzzles have only one maximum, while others have multiple maximums. Here by "maximum" I mean a status of the puzzle that no more action could make it closer to the final goal. The status where the final goal is reached is definitely a global maximum with this definition, while other maximums are so-called "local maximum". For example, in a Sokuban level like the picture following, if the player push the red box first to the bottom, he will never acheive his final goal, so he enters a local maximum of the puzzle.
+							Game is about problem-solving. Problem-solving forms puzzles. I found a len of seeing puzzles is by the "values" of their "status", and how these "status" transform to each other to reach the "global maximum point" or "local maximum points". I found this len can be helpful when design games, because it hints on what the player experience of problem-solving could be.
 						</p>
 
 						<p>
-							I think this classification can be useful when design puzzles. It abstructs the puzzles into their math nature so we could use math tools on them. It also can be used to predict players' behaviors. I will use some instances to show how to abstruct puzzles with the len of maximum, and how palyers make different strateties related to their maximums.
+							First of all, let me define the terms mentioned in last paragraph. Here I will take the game Sokuban as an easy example. A "status" is the integration of all meaningful information at a certain time point, like a layout including the positions of the boxes, the destinations and the player. The "value" is a measurement of how close the status is close to the final goal. In Sokuban, it can be the number of boxes that are in destinations. A "global maximum point" is a reachable status whose value is the largest among all reachable status. (For a normal puzzle that has solutions, the global maximum points are always the status of solutions.) In Sokuban, if all the boxes are put into destinations, it is a global maximum point. A "local maximum point", on the other hand, is such a reachable status that no larger value could be reached unless transforming to some other status of smaller values first. For example, in the picture showed below, if the player pushes the red box down into the destination, it will be a local maximum point because the yellow one can never reach a destination unless getting the red one out first.
 						</p>
 
 						<p>
-							
+							Two methods are often used on solving single-maximum puzzles, like Jigsaw Puzzle and most escape rooms. First method is greedy iteration, to increase the value of status one by one until reaching the final goal. The other method is to break the big puzzle into smaller ones. In Jigsaw Puzzle, most players will divide puzzle pieces by their colors and build each color seperately before put them together. In escape rooms, players always seek for clues about one smaller puzzle (like a password) in the game, and it always contributes to the final escaping as an earlier step. In this aspect, solving a single-maximum puzzle is mostly solving a series of smaller and easier sub-puzzles. This repeated provlem-solving leads to repeated achievement gain.
 						</p>
-						
 
-						References:<br>
-						[1] <a href="https://forums.tigsource.com/index.php?topic=6273.0" target="_blank">https://forums.tigsource.com/index.php?topic=6273.0 </a> <br>
-						[2] <a href="https://mcreator.net/download" target="_blank">https://mcreator.net/download</a> <br>
-						[3] <a href="https://www.youtube.com/watch?v=FeaZu3nSn9A" target="_blank">https://www.youtube.com/watch?v=FeaZu3nSn9A</a> <br>
-						[4] <a href="https://www.youtube.com/watch?v=6VWsq1JXVWY" target="_blank">https://www.youtube.com/watch?v=6VWsq1JXVWY</a> <br>
-						[5] <a href="https://www.reddit.com/r/IAmA/comments/nbe2h/i_am_the_composer_and_sound_designer_of_minecraft/" target="_blank">https://www.reddit.com/r/IAmA/comments/nbe2h/i_am_the_composer_and_sound_designer_of_minecraft/</a>
+
+
 
 						
 						
