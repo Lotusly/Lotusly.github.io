@@ -64,27 +64,76 @@
 							Game is about problem-solving. Problem-solving forms puzzles. I found a len of seeing puzzles is by the "values" of their "status", and how these "status" transform to each other to reach the "global maximum points" or "local maximum points". I found this len can be helpful when design games, because it hints on what the player experience of problem-solving could be. In this article, I will make some simple analyses with this len.
 						</p>
 
+						<h3> Terms </h3>
+
 						<p>
 							First of all, let me define the terms mentioned in last paragraph. Here I will take the game Sokuban as an easy example. A "status" is the integration of meaningful information at a certain time point, like a layout including the positions of the boxes, the destinations and the player. The "value" is a measurement of how close the status is close to the final goal. In Sokuban, it can be the number of boxes that are in destinations. A "global maximum point" is a reachable status whose value is the largest among all reachable status. (For a normal puzzle that has solutions, the global maximum points are always the status of solutions.) In Sokuban, if all the boxes are put into destinations, it is a global maximum point. A "local maximum point", on the other hand, is such a reachable status that no larger value could be reached unless transforming to some other status of smaller values first. For example, in the picture showed below, if the player pushes the red box down into the destination, it will be a local maximum point because the yellow one can never reach a destination without getting the red one out first.
 						</p>
 
 						<center>
 							<img src="Example.png" alt="Local Maximum Point in Sokuban"/>
-							<br>Img 1. Local Maximum Point in Sokuban
+							<br> IMG 1. Local Maximum Point in Sokuban
 						</center>
 
+						<h3> Two Methods for Single-Maximum Puzzles </h3>
+
 						<p>
-							Two methods are often used on solving single-maximum puzzles, like Jigsaw Puzzle and most escape rooms. First method is greedy[1] iteration, to increase the value of status gradually until reaching the final goal. The other method is divide-and-concuer[2], to break the big puzzle into smaller ones. In Jigsaw Puzzle, most players will divide puzzle pieces by their colors and build each color seperately before put them together. In escape rooms, players always seek for clues about one smaller puzzle (like a password) in the game, and it always contributes to the final escaping as an earlier step. In this aspect, solving a single-maximum puzzle is mostly solving a series of smaller and easier sub-puzzles. This repeated problem-solving leads to repeated achievement gain.
+							Two methods are often used to efficiently solve single-maximum puzzles, like Jigsaw Puzzle and most escape rooms. First method is greedy[1] iteration, to increase the value of status gradually until reaching the final goal. The other method is divide-and-concuer[2], to break the big puzzle into smaller ones. In Jigsaw Puzzle, most players will divide puzzle pieces by their colors and build each color seperately before put them together. In escape rooms, players always seek for clues about one smaller puzzle (like a password) in the game, and it always contributes to the final escaping as an earlier step. In this aspect, solving a single-maximum puzzle is mostly solving a series of smaller and easier sub-puzzles. Repeated problem-solving leads to repeated achievement gain.
 						</p>
 
 						<p>
-							However, the situations for multi-maximum puzzles are much more challenging (and therefore interesting). Neither of the two methods can directly solve a multi-maximum puzzle. Players often need to consider the transformation among status and explore the state-machine[3] with strategies.  
+							For most puzzles that could be represented by finite-state machines[3], search algorithms[4] can always find a solution. But single-maximum puzzles are usually not so complex that players can prefer more intuitive and efficient approaches, like greedy iteration and divide-and-conquer.
 						</p>
+
+						<h3> Multi-Maximum Puzzles: Use of Local Maximum Points</h3>
+
+						<p>
+							However, the situations for multi-maximum puzzles are much more challenging (and therefore interesting). Neither of the two methods can directly solve a multi-maximum puzzle, because they may lead to Local Maximum Points; while search algorithms are still useful. But, search algorithm can be too complex for humans to perform with too many status, and full information on the logical structure of the puzzle is in need to garantee the success. Players use various strategies, including going to higher-valued status or directly Local Maximum Points, to gradually reveal the information, the principles (high-level rules), and approach to the solution(s). Think of the game Rubik's Cube. Few human brains (if any) had the ability to perform search algorithms on it. Most players fix the faces one-by-one. Although the fixed faces need to be broken later, the process teaches the player useful principles and decrease the complexity of the puzzle.
+						</p>
+
+						<p>
+							Once I watched an online streamer playing Celeste. A puzzle is that the player must collect all 3 blue coins to open the blue door to reach next map (in the picture below, start at (0), reach the positions (1)(2)(3) then go to (7) after the blue door move to the new position). He easily found the route (0)->(2)->(6)->(1)->(6)->(5)->(4)->(3) by simply moving to higher-valued reachable status. The revealed logical structure is as the below-right. The streamer got stuck there. Although he has full access to the positions (3)(4)(5)(6)(1), he couldn't find any way to (7). Moving between (4) and (7) seemed impossible.
+						</p>
+
+
+						<center>
+							<img src="CelesteReal1.gif" width=45%/> 
+							<img src="CelesteAbstraction1.gif" width=50%/>
+						
+							<br>IMG 2. Route Found by Greedy Algorithm and the Information Revealed
+						</center>
+
+						
+
+						<p>
+							I suggested him to try another route, (0)->(3)->(4)->(5)->(1)->(6)->(2). It was proved to be a Local Maximum Point in the end. Although it collects all 3 blue coins, going (6)->(2) necessarily kills the player. The streamer quickly found it out,  but the wrong route revealed new information: moving between (0) and (3). With this information, the streamer quickly found the final solution: (0)->(2)->(6)->(1)->(6)->(5)->(4)->(3)->(0)->(7). In multi-maximum puzzles, going to Local Maximum Points are useful because of the information/principles revealed during the process, and it could directly solve the puzzle with a good luck.
+						</p>
+
+						<center>
+							<img src="CelesteReal2.gif" width=45%/>
+							<img src="Celeste2.png" width=50%/>
+							<br> IMG 3. A Wrong Route
+						</center>
+
+						<center>
+							<img src="CelesteReal3.gif" width=45%/>
+							<img src="Celeste3.png" width=50%/>
+							<br> IMG 4. Final Solution
+						</center>
+
+						<h3>Local Maximum Points and Player Experience</h3>
+
+
+						<p>
+							
+						</p>
+
 
 						Reference:<br>
-						[1] https://en.wikipedia.org/wiki/Greedy_algorithm
-						[2] https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
-						[3] https://en.wikipedia.org/wiki/Finite-state_machine
+						[1] https://en.wikipedia.org/wiki/Greedy_algorithm<br>
+						[2] https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm<br>
+						[3] https://en.wikipedia.org/wiki/Finite-state_machine<br>
+						[4] https://en.wikipedia.org/wiki/Search_algorithm<br>
 
 
 
