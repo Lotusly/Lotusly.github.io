@@ -61,23 +61,30 @@
 						<hr class="star-primary">
 
 						<p>
-							Game is about problem-solving. Problem-solving forms puzzles. I found a len of seeing puzzles is by the "values" of their "status", and how these "status" transform to each other to reach the "global maximum point" or "local maximum points". I found this len can be helpful when design games, because it hints on what the player experience of problem-solving could be. With all the potentials, I will make some simple discussion in this article to inspire the views thr
+							Game is about problem-solving. Problem-solving forms puzzles. I found a len of seeing puzzles is by the "values" of their "status", and how these "status" transform to each other to reach the "global maximum points" or "local maximum points". I found this len can be helpful when design games, because it hints on what the player experience of problem-solving could be. In this article, I will make some simple analyses with this len.
 						</p>
 
 						<p>
 							First of all, let me define the terms mentioned in last paragraph. Here I will take the game Sokuban as an easy example. A "status" is the integration of meaningful information at a certain time point, like a layout including the positions of the boxes, the destinations and the player. The "value" is a measurement of how close the status is close to the final goal. In Sokuban, it can be the number of boxes that are in destinations. A "global maximum point" is a reachable status whose value is the largest among all reachable status. (For a normal puzzle that has solutions, the global maximum points are always the status of solutions.) In Sokuban, if all the boxes are put into destinations, it is a global maximum point. A "local maximum point", on the other hand, is such a reachable status that no larger value could be reached unless transforming to some other status of smaller values first. For example, in the picture showed below, if the player pushes the red box down into the destination, it will be a local maximum point because the yellow one can never reach a destination without getting the red one out first.
 						</p>
 
+						<center>
+							<img src="Example.png" alt="Local Maximum Point in Sokuban"/>
+							<br>Img 1. Local Maximum Point in Sokuban
+						</center>
+
 						<p>
-							Two methods are often used on solving single-maximum puzzles, like Jigsaw Puzzle and most escape rooms. First method is greedy iteration, to increase the value of status one by one until reaching the final goal. The other method is to break the big puzzle into smaller ones. In Jigsaw Puzzle, most players will divide puzzle pieces by their colors and build each color seperately before put them together. In escape rooms, players always seek for clues about one smaller puzzle (like a password) in the game, and it always contributes to the final escaping as an earlier step. In this aspect, solving a single-maximum puzzle is mostly solving a series of smaller and easier sub-puzzles. This repeated problem-solving leads to repeated achievement gain.
+							Two methods are often used on solving single-maximum puzzles, like Jigsaw Puzzle and most escape rooms. First method is greedy[1] iteration, to increase the value of status gradually until reaching the final goal. The other method is divide-and-concuer[2], to break the big puzzle into smaller ones. In Jigsaw Puzzle, most players will divide puzzle pieces by their colors and build each color seperately before put them together. In escape rooms, players always seek for clues about one smaller puzzle (like a password) in the game, and it always contributes to the final escaping as an earlier step. In this aspect, solving a single-maximum puzzle is mostly solving a series of smaller and easier sub-puzzles. This repeated problem-solving leads to repeated achievement gain.
 						</p>
 
 						<p>
-							However, the situations for multi-maximum puzzles are much more complex. Neither of the two methods is useful for multi-maximum puzzles. Players often need to consider the transformation among status and exploit among paths. The logical abstruction of the process can be made into status machines[1]. 
+							However, the situations for multi-maximum puzzles are much more challenging (and therefore interesting). Neither of the two methods can directly solve a multi-maximum puzzle. Players often need to consider the transformation among status and explore the state-machine[3] with strategies.  
 						</p>
 
 						Reference:<br>
-						[1] https://en.wikipedia.org/wiki/Finite-state_machine
+						[1] https://en.wikipedia.org/wiki/Greedy_algorithm
+						[2] https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
+						[3] https://en.wikipedia.org/wiki/Finite-state_machine
 
 
 
