@@ -67,7 +67,7 @@
 						<h3> Terms </h3>
 
 						<p>
-							First of all, let me define the terms mentioned in last paragraph. Here I will take the game Sokuban as an easy example. A "status" is the integration of meaningful information at a certain time point, like a layout including the positions of the boxes, the destinations and the player. The "value" is a measurement of how close the status is close to the final goal. In Sokuban, it can be the number of boxes that are in destinations. A "global maximum point" is a reachable status whose value is the largest among all reachable status. (For a normal puzzle that has solutions, the global maximum points are always the status of solutions.) In Sokuban, if all the boxes are put into destinations, it is a global maximum point. A "local maximum point", on the other hand, is such a reachable status that no larger value could be reached unless transforming to some other status of smaller values first. For example, in the picture showed below, if the player pushes the red box down into the destination, it will be a local maximum point because the yellow one can never reach a destination without getting the red one out first.
+							First of all, let me define the terms mentioned in last paragraph. Here I will take the game Sokuban as an example. A "status" is the integration of meaningful information at a certain time point, like a layout including the positions of the boxes, the destinations and the player. The "value" is a measurement of how close the status is close to the final goal. In Sokuban, it can be the number of boxes that are in destinations. A "global maximum point" is a reachable status whose value is the largest among all reachable status. (For a normal puzzle that has solutions, the global maximum points are always the status of solutions.) In Sokuban, if all the boxes are put into destinations, it is a global maximum point. A "local maximum point", on the other hand, is such a reachable status that no larger value could be reached unless transforming to some other status of smaller values first. For example, in the picture showed below, if the player pushes the red box down into the destination, it will be a local maximum point because the yellow one can never reach a destination without getting the red one out first.
 						</p>
 
 						<center>
@@ -158,8 +158,18 @@
 						</center>
 
 						<p>
+							Let's put values on these states to see it more clearly. First, we need to choose a scale of values. Here I choose:
+						</p>
+
+						<center>
+							Value = ( the number of fruits eaten) + 1 / ( the shortest distance from the head to the closest fruit + 1)
+						</center>
+
+						<p>
 							There're also many other great player experience that utilized the value-motivated player psychology. And the design cam become more complex and exciting with dynamic puzzle logic (interactive object that will change the puzzle structure when triggered), randomly ingredients generating (like Candy Crush Sage) and other elements. The len of values and maximum, the abstracted logical model, the motivation of the players, can be a sharp weapon of designers to add complex level design with simple Zen. 
 						</p>
+
+
 
 
 						Reference:<br>
