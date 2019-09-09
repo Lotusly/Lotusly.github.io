@@ -1,6 +1,6 @@
 (function ($) {
 
-    var reg_path = new RegExp("(^|&)chapter=([^&]+)(&|$)");
+    var reg_path = new RegExp("(^|&)chapter=([^&/]+)(&|$)");
     var url = window.location.search.substr(1).match(reg_path);
     if(url){
 	    var chapter=unescape(url[2]);
