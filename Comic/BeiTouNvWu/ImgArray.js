@@ -2,16 +2,20 @@
 
     var reg_path = new RegExp("(^|&)chapter=([^&/]+)(&|$)");
     var url = window.location.search.substr(1).match(reg_path);
-    if(url){
-	    var chapter=unescape(url[2]);
-	    var i=1;
+   // alert(window.location.pathname);
 
-	    var body = document.getElementById("div1");
-	    var id = "img_1";
-	    body.innerHTML='<img id="img_1" \
-				src="images/'+chapter+'/1.jpg" \
-				onerror="finalError(1)" \
-				onload="addImg('+chapter+','+'2)"/>\n';
+    //alert(window.location.href)
+    if(url){
+	    var chapter=parseInt(unescape(url[2])); // Only int chapter index is acceptable
+	    if(chapter){
+	    	displayComic(chapter);
+	    }
+	    else{
+	    	displayMain();
+	    }
+	}
+	else{
+		displayMain();
 	}
 
 })(jQuery);
@@ -35,12 +39,15 @@ function addImg(chapter, i){
 
 
 		if(body.firstChild.tagName.toUpperCase()=="IMG"){
+			// The chapter title is not added. Performe initialization.
 
 			var h2 = document.createElement('h2');
 			h2.setAttribute("style","padding:50px");
 			h2.innerHTML="Chapter "+chapter;
     		
 			body.insertBefore(h2, body.firstChild);
+
+			initialize(chapter);
 		}
 
 		
@@ -48,14 +55,21 @@ function addImg(chapter, i){
 		img.setAttribute("id","img_"+i);
 		img.setAttribute("src",'images/'+chapter+'/'+i+'.jpg');
 		img.setAttribute("onload",'addImg('+chapter+','+(i+1)+')');
-		img.setAttribute("onerror",'finalError('+i+')');
+		img.setAttribute("onerror",'finalError('+chapter+','+i+')');
 
 		body.appendChild(img);
 	}
 	
 };
 
-function finalError(i){
+function initialize(chapter){
+	var nextButton = document.getElementById("button_next");
+	nextButton.setAttribute("onclick", "loadNextChapter("+chapter+")");
+	nextButton.disabled=false;
+
+}
+
+function finalError(chapter, i){
 	//alert("finalError "+i);
 
 	var thisImg=document.getElementById("img_"+i);
@@ -68,6 +82,8 @@ function finalError(i){
 				lastImg.setAttribute("onerror","this.hidden=true");
 			}
 			body.removeChild(thisImg);
+
+
 		}
 	}
 	else{ //no picture at all
@@ -78,3 +94,28 @@ function finalError(i){
 
 	}
 };
+
+function loadNextChapter(chapter){
+	window.location.assign("?chapter="+(chapter+1));
+}
+
+function displayMain(){
+	//alert("href: "+window.location.href);
+	//alert("pathname: "+window.location.pathname);
+	if(window.location.href!=window.location.pathname){
+		if(window.location.href.split(window.location.pathname)[1]){
+			window.location.assign(window.location.pathname);
+		}
+		//window.location.assign(window.location.pathname);
+	}
+}
+
+function displayComic(chapter){
+	var i=1;
+	var body = document.getElementById("div1");
+    var id = "img_1";
+    body.innerHTML='<img id="img_1" \
+		src="images/'+chapter+'/1.jpg" \
+		onerror="finalError('+chapter+',1)" \
+		onload="addImg('+chapter+','+'2)"/>\n';
+}
