@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive" style="color:#FFFFFF">
                     <ul class="navbar-nav ml-auto" style="color:#FFFFFF">
                         <li class="nav-item active">
-                            <a style="color:#FFFFFF; font-size:30px">Chapter 1</a>
+                            <a id="chapterDisplay" style="color:#FFFFFF; font-size:30px"></a>
                         </li>
                         
                     </ul>
@@ -60,21 +60,38 @@
 		<!-- Footer -->
 
 		<footer class="fixed-bottom">
-			<div align="center" style="width:auto" disabled>
-				<button id="button_next" type="button" style="
-					background-color: #000000;
-					color:#FFFFFF ;
-					border-radius:4px;
-					border-width:3px;
-					border-style: double;
-					border-color: #FFFFFF;
-					text-align: center;
-					font-size: 20px;
-					margin-top:20px;
-					margin-bottom: 20px">
-					Next Chapter
-				</button>
-			<div>
+			<button align="left" id="button_last" type="button" onclick="loadLastChapter()" disabled style="
+				display: inline-block;
+				background-color: #000000;
+				color:#FFFFFF ;
+				border-radius:4px;
+				border-width:3px;
+				border-style: double;
+				border-color: #FFFFFF;
+				text-align: center;
+				font-size: 20px;
+				margin-top:20px;
+				margin-bottom: 20px;
+				width:20%">
+				Last Chapter
+			</button>
+			<div style="width:59%; display:inline-block;"></div>
+			<button class="ml-auto" align="right" id="button_next" type="button" onclick="loadNextChapter()" disabled style="
+				background-color: #000000;
+				color:#FFFFFF ;
+				border-radius:4px;
+				border-width:3px;
+				border-style: double;
+				border-color: #FFFFFF;
+				text-align: center;
+				font-size: 20px;
+				margin-top:20px;
+				margin-bottom: 20px;
+				width:20%">
+				Next Chapter
+			</button>
+
+
 		</footer>
 
 		<!-- Bootstrap core JavaScript -->

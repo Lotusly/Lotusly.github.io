@@ -6,8 +6,8 @@
 
     //alert(window.location.href)
     if(url){
-	    var chapter=parseInt(unescape(url[2])); // Only int chapter index is acceptable
-	    if(chapter){
+	    var chapter=parseInt(unescape(url[2])); // Only int chapter index (except for 0) is acceptable
+	    if(chapter){ 
 	    	displayComic(chapter);
 	    }
 	    else{
@@ -19,6 +19,8 @@
 	}
 
 })(jQuery);
+
+var Chapter;
 
 function addImg(chapter, i){
 
@@ -37,16 +39,10 @@ function addImg(chapter, i){
 			lastImg.setAttribute("onerror","this.hidden=true");
 		}
 
-
-		if(body.firstChild.tagName.toUpperCase()=="IMG"){
-			// The chapter title is not added. Performe initialization.
-
-			var h2 = document.createElement('h2');
-			h2.setAttribute("style","padding:50px");
-			h2.innerHTML="Chapter "+chapter;
-    		
-			body.insertBefore(h2, body.firstChild);
-
+		var chapterDisplay = document.getElementById("chapterDisplay");
+		if(!chapterDisplay.innerHTML){
+			// The chapter title is not added, which means initialize function is never called before. Performe initialization.
+			chapterDisplay.innerHTML="Chapter "+chapter;
 			initialize(chapter);
 		}
 
@@ -63,8 +59,11 @@ function addImg(chapter, i){
 };
 
 function initialize(chapter){
+	Chapter=chapter;
 	var nextButton = document.getElementById("button_next");
-	nextButton.setAttribute("onclick", "loadNextChapter("+chapter+")");
+	nextButton.disabled=""
+	var lastButton = document.getElementById("button_last");
+	lastButton.disabled=""
 	nextButton.disabled=false;
 
 }
@@ -95,8 +94,12 @@ function finalError(chapter, i){
 	}
 };
 
-function loadNextChapter(chapter){
-	window.location.assign("?chapter="+(chapter+1));
+function loadNextChapter(){
+	window.location.assign("?chapter="+(Chapter+1));
+}
+
+function loadLastChapter(){
+	if(Chapter>0) window.location.assign("?chapter="+(Chapter-1));
 }
 
 function displayMain(){
