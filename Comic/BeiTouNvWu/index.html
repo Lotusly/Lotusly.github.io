@@ -59,9 +59,10 @@
 
 		<!-- Footer -->
 
-		<footer class="fixed-bottom">
+		<footer class="fixed-bottom" id="footer">
+			<div id="buttonContainer" style="display:table;width:auto">
 			<button align="left" id="button_last" type="button" onclick="loadLastChapter()" disabled style="
-				display: inline-block;
+				display: table-cell;
 				background-color: #000000;
 				color:#FFFFFF ;
 				border-radius:4px;
@@ -75,8 +76,10 @@
 				width:20%">
 				Last Chapter
 			</button>
-			<div style="width:59%; display:inline-block;"></div>
+			<div id="button_space" style="display:table-cell"></div>
+
 			<button class="ml-auto" align="right" id="button_next" type="button" onclick="loadNextChapter()" disabled style="
+				display: table-cell;
 				background-color: #000000;
 				color:#FFFFFF ;
 				border-radius:4px;
@@ -90,6 +93,7 @@
 				width:20%">
 				Next Chapter
 			</button>
+		</div>
 
 
 		</footer>

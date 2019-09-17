@@ -60,11 +60,24 @@ function addImg(chapter, i){
 
 function initialize(chapter){
 	Chapter=chapter;
-	var nextButton = document.getElementById("button_next");
-	nextButton.disabled=""
+	//var w = window.innerWidth;
+	var w = document.getElementById("footer").offsetWidth;
+	var buttonWidth = Math.min(w*0.5,Math.max(w*0.2,30));
+
 	var lastButton = document.getElementById("button_last");
 	lastButton.disabled=""
-	nextButton.disabled=false;
+	lastButton.style.width=buttonWidth+"px";
+	lastButton.style.fontSize=buttonWidth/8+"px";
+	//lastButton.innerHTML=""+buttonWidth;
+	var nextButton = document.getElementById("button_next");
+	nextButton.disabled=""
+	nextButton.style.width=buttonWidth+"px";
+	nextButton.style.fontSize=buttonWidth/8+"px";
+	//nextButton.innerHTML=""+(w);
+	
+	var buttonSpace = document.getElementById("button_space");
+	buttonSpace.style.width=w*10+"px";
+	//buttonSpace.innerHTML=""+(w-buttonWidth*2-14);
 
 }
 
